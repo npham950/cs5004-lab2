@@ -24,6 +24,11 @@ public class Bishop implements ChessPiece {
   }
 
   @Override
+  public Color getColor() {
+    return this.color;
+  }
+
+  @Override
   public boolean canMove(int row, int column) {
     verifyRowandColumn(row, column);
     return this.row != row && this.column != column && Math.abs(row - this.row) == Math.abs(column - this.column);
@@ -31,7 +36,7 @@ public class Bishop implements ChessPiece {
 
   @Override
   public boolean canKill(ChessPiece piece) {
-    return canMove(piece.getRow(), piece.getColumn());
+    return !this.color.equals(piece.getColor()) && canMove(piece.getRow(), piece.getColumn());
   }
 
   public boolean isValid(int n) {
