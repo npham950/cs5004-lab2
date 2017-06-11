@@ -31,7 +31,7 @@ public class Bishop implements ChessPiece {
 
   @Override
   public boolean canKill(ChessPiece piece) {
-    return false;
+    return canMove(piece.getRow(), piece.getColumn());
   }
 
   public boolean isValid(int n) {
