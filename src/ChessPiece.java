@@ -4,6 +4,7 @@
 public interface ChessPiece {
   int getRow();
   int getColumn();
+  Color getColor();
   boolean canMove(int row, int column);
   boolean canKill(ChessPiece piece);
 }
