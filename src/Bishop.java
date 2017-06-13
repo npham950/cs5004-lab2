@@ -2,9 +2,7 @@
  * Created by Steven on 6/10/17.
  */
 public class Bishop extends ChessPieceAbs {
-  private int row;
-  private int column;
-  private Color color;
+
 
   public Bishop(int row, int column, Color color) {
     super(row, column, color);
@@ -13,7 +11,7 @@ public class Bishop extends ChessPieceAbs {
   @Override
   public boolean canMove(int row, int column) {
     verifyRowandColumn(row, column);
-    return this.row != row && this.column != column && Math.abs(row - this.row) == Math.abs(column - this.column);
+    return this.getRow() != row && this.getColumn() != column && Math.abs(row - this.getRow()) == Math.abs(column - this.getColumn());
   }
 
   @Override
