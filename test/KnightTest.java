@@ -1,5 +1,4 @@
 import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,16 +10,25 @@ public class KnightTest {
 
   @Before
   public void setUp() throws Exception {
-    this.knight = new Knight(5, 5, Color.WHITE);
+    this.knight = new Knight(0, 0, Color.WHITE);
   }
 
   @Test
   public void canMove () throws Exception {
-    assertEquals(true, this.knight.canMove(4, 3));
-    assertEquals(true, this.knight.canMove(3, 2));
-    assertEquals(true, this.knight.canMove(4, 2));
-    assertEquals(false, this.knight.canMove(3, 3));
-    assertEquals(false, this.knight.canMove(5, 0));
+    assertEquals(false, this.knight.canMove(0, 2));
+    assertEquals(false, this.knight.canMove(1, 0));
+    assertEquals(true, this.knight.canMove(1, 2));
+    assertEquals(false, this.knight.canMove(1, 1));
+    assertEquals(false, this.knight.canMove(2, 2));
+    assertEquals(false, this.knight.canMove(3,0));
+  }
+
+  @Test
+  public void canKill() throws Exception {
+    assertEquals(false, this.knight.canKill(new Knight (1, 0, Color.BLACK)));
+    assertEquals(false, this.knight.canKill(new Knight (0, 2, Color.BLACK)));
+    assertEquals(true, this.knight.canKill(new Knight (1, 2, Color.BLACK)));
+    assertEquals(false, this.knight.canKill(new Knight (1, 2, Color.WHITE)));
   }
 
 }
