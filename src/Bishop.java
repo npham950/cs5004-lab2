@@ -15,7 +15,7 @@ public class Bishop extends ChessPieceAbs {
 
   @Override
   public boolean canKill(ChessPiece piece) {
-    return !this.getColor().equals(piece.getColor()) && canMove(piece.getRow(), piece.getColumn());
+    return super.canKill(piece) && canMove(piece.getRow(), piece.getColumn());
   }
 
 }

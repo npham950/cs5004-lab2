@@ -15,6 +15,6 @@ public class Pawn extends ChessPieceAbs {
 
     @Override
     public boolean canKill(ChessPiece piece) {
-        return this.getColor() != piece.getColor() && piece.getRow() - this.getRow() == 1 && Math.abs(this.getColumn() - piece.getColumn()) == 1;
+        return super.canKill(piece) && piece.getRow() - this.getRow() == 1 && Math.abs(this.getColumn() - piece.getColumn()) == 1;
     }
 }

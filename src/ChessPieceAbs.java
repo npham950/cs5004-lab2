@@ -39,4 +39,8 @@ public abstract class ChessPieceAbs implements ChessPiece {
     verifyRowandColumn(row, column);
     return true;
   }
+
+  public boolean canKill(ChessPiece piece) {
+    return piece.getColor() != this.getColor();
+  }
 }

@@ -18,6 +18,6 @@ public class Queen extends ChessPieceAbs {
 
     @Override
     public boolean canKill(ChessPiece piece) {
-        return this.getColor() != piece.getColor() && canMove(piece.getRow(), piece.getColumn());
+        return super.canKill(piece) && canMove(piece.getRow(), piece.getColumn());
     }
 }
