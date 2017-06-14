@@ -9,8 +9,7 @@ public class Knight extends ChessPieceAbs {
 
   @Override
   public boolean canMove(int row, int column) {
-    verifyRowandColumn(row, column);
-    return Math.abs(this.getRow() - row) * Math.abs(this.getColumn() - column) == 2 ;
+    return super.canMove(row, column) && Math.abs(this.getRow() - row) * Math.abs(this.getColumn() - column) == 2 ;
   }
 
   @Override

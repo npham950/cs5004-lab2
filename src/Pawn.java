@@ -10,8 +10,7 @@ public class Pawn extends ChessPieceAbs {
 
     @Override
     public boolean canMove(int row, int column) {
-        verifyRowandColumn(row, column);
-        return this.getColumn() == column && row - this.getRow() == 1 ;
+        return super.canMove(row, column) && this.getColumn() == column && row - this.getRow() == 1 ;
     }
 
     @Override

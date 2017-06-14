@@ -10,8 +10,7 @@ public class Bishop extends ChessPieceAbs {
 
   @Override
   public boolean canMove(int row, int column) {
-    verifyRowandColumn(row, column);
-    return this.getRow() != row && this.getColumn() != column && Math.abs(row - this.getRow()) == Math.abs(column - this.getColumn());
+    return super.canMove(row, column) && this.getRow() != row && this.getColumn() != column && Math.abs(row - this.getRow()) == Math.abs(column - this.getColumn());
   }
 
   @Override

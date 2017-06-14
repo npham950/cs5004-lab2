@@ -34,4 +34,9 @@ public abstract class ChessPieceAbs implements ChessPiece {
       throw new IllegalArgumentException ("Non-negative number only");
     }
   }
+
+  public boolean canMove(int row, int column) {
+    verifyRowandColumn(row, column);
+    return true;
+  }
 }

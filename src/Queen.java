@@ -2,14 +2,18 @@
  * Created by Steven on 6/10/17.
  */
 public class Queen extends ChessPieceAbs {
+    private Rook rook;
+    private Bishop bishop;
+
     public Queen (int row, int column, Color color) {
         super(row, column, color);
+        this.rook = new Rook(row, column, color);
+        this.bishop = new Bishop(row, column, color);
     }
 
     @Override
     public boolean canMove(int row, int column) {
-        verifyRowandColumn(row, column);
-        return Math.abs(this.getRow() - row) == Math.abs(this.getColumn() - column) || this.getRow() == row || this.getColumn() == column;
+        return super.canMove(row, column) && (rook.canMove(row, column) || bishop.canMove(row, column));
     }
 
     @Override
